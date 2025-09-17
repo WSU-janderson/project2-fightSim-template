@@ -39,14 +39,14 @@ Your Character class should implement, minimally, the following member functions
 | `getRole()`                           | 	`string`	      | Return the character’s role                                                                                                                                  |
 ### Attacking Another Character
 
-You should implement a member function for attacking another character. To have character1 attack character2, for example, you would call character1.attack(character2); When the attack member function is called, the following steps should be taken:
-1.	Roll a 20-sided die (i.e. generate a random number from 1 to 20) and add the attacking character’s attackBonus.
-2.	If the result is equal to or higher than the opponent’s armorClass, then the attack hits. Otherwise it misses.
-3.	If the attack hits, roll a 10-sided die and add the attacking character’s damageBonus. Subtract the resulting amount from the opponent’s hit points by calling it’s damage(amount) method.
+You should implement a member function for attacking another character. To have `character1` attack `character2`, for example, you would call `character1.attack(character2);` When the attack member function is called, the following steps should be taken:
+1.	Roll a 20-sided die (i.e. generate a random number from 1 to 20) and add the attacking character’s `attackBonus`.
+2.	If the result is equal to or higher than the opponent’s `armorClass`, then the attack hits. Otherwise it misses.
+3.	If the attack hits, roll a 10-sided die and add the attacking character’s `damageBonus`. Subtract the resulting amount from the opponent’s hit points by calling it’s `damage(amount)` method.
 
 ## Program Operation
 
-Your main program should be implemented in a file project2.cpp. Your program should prompt the user for character details (name, role, hit points, etc.) for two characters. It should then simulate combat between the two characters until one of the two characters reaches zero hit points.
+Your main program should be implemented in the file main.cpp. Your program should prompt the user for character details (name, role, hit points, etc.) for two characters. It should then simulate combat between the two characters until one of the two characters reaches zero hit points.
 
 I suggest implementing the input prompt after the character and combat logic. You can simply hard-code values for each character, then when you test the program you will not have to enter values each time you run it.
 
