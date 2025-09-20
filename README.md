@@ -6,11 +6,14 @@
 
 ## Overview
 
-In this project, you will build a combat simulator for a simplified roll playing game (RPG). You will create a C++ class for characters in the game, including the character’s name, hit points, armor class, and so forth. You will then create two character objects and simulate a combat between them.
+In this project, you will build a combat simulator for a simplified roll playing game (RPG). You will create a C++ class
+for characters in the game, including the character’s name, hit points, armor class, and so forth. You will then create
+two character objects and simulate a combat between them.
 
 ## The Character Class
 
-You should define a C++ class called Character that implements an RPG character in the files [Character.h](Character.h) and [Character.cpp](Character.cpp).
+You should define a C++ class called Character that implements an RPG character in the files [Character.h](Character.h)
+and [Character.cpp](Character.cpp).
 
 ### Character Data
 
@@ -23,32 +26,40 @@ Your character class should contain the following private member data.
 | `hitPoints`   | `int`    | Character's current health; When it reaches zero, the character is dead. |   
 | `attackBonus` | `int`    | Value added to a character's attack roll to determine if an attack hits. |
 | `damageBonus` | `int`    | Value added to a character's damage roll when attacking.                 |
-| `armorBonus`   | `int`     | Value determines how hard a character is to hit                          |
+| `armorBonus`  | `int`    | Value determines how hard a character is to hit                          |
 
 ### Character Member Functions
 
 Your Character class should implement, minimally, the following member functions (methods):
 
-| Name                                | 	Return Type  | Description                                                                                                                                                  |
-|:------------------------------------|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `print(ostream& os)`                  | 	`ostream&`     | Print the character to the given ostream                                                                                                                     |
-| `attack(Character& otherCharacter)`	  | `void`          | Attack another character (see below for details)                                                                                                             |
-| `damage(int amount)`                  | `void`          | 	Subtract amount from the character’s current hit points (Note: the minimum hit point value should be zero, so you will need to check for negative results)  |
-| `getHealth()`                         | `int`           | Return the character’s current health                                                                                                                        |
-| 	                                   | `string`        | 	Return the character’s name                                                                                                                                 |
-| `getRole()`                           | 	`string`	      | Return the character’s role                                                                                                                                  |
+| Name                                 | 	Return Type | Description                                                                                                                                                 |
+|:-------------------------------------|:-------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `print(ostream& os)`                 | 	`ostream&`  | Print the character to the given ostream                                                                                                                    |
+| `attack(Character& otherCharacter)`	 | `void`       | Attack another character (see below for details)                                                                                                            |
+| `damage(int amount)`                 | `void`       | 	Subtract amount from the character’s current hit points (Note: the minimum hit point value should be zero, so you will need to check for negative results) |
+| `getHealth()`                        | `int`        | Return the character’s current health                                                                                                                       |
+| `getName()`                          | `string`     | 	Return the character’s name                                                                                                                                |
+| `getRole()`                          | 	`string`	   | Return the character’s role                                                                                                                                 |
+
 ### Attacking Another Character
 
-You should implement a member function for attacking another character. To have `character1` attack `character2`, for example, you would call `character1.attack(character2);` When the attack member function is called, the following steps should be taken:
-1.	Roll a 20-sided die (i.e. generate a random number from 1 to 20) and add the attacking character’s `attackBonus`.
-2.	If the result is equal to or higher than the opponent’s `armorClass`, then the attack hits. Otherwise it misses.
-3.	If the attack hits, roll a 10-sided die and add the attacking character’s `damageBonus`. Subtract the resulting amount from the opponent’s hit points by calling it’s `damage(amount)` method.
+You should implement a member function for attacking another character. To have `character1` attack `character2`, for
+example, you would call `character1.attack(character2);` When the attack member function is called, the following steps
+should be taken:
+
+1. Roll a 20-sided die (i.e. generate a random number from 1 to 20) and add the attacking character’s `attackBonus`.
+2. If the result is equal to or higher than the opponent’s `armorClass`, then the attack hits. Otherwise it misses.
+3. If the attack hits, roll a 10-sided die and add the attacking character’s `damageBonus`. Subtract the resulting
+   amount from the opponent’s hit points by calling it’s `damage(amount)` method.
 
 ## Program Operation
 
-Your main program should be implemented in the file main.cpp. Your program should prompt the user for character details (name, role, hit points, etc.) for two characters. It should then simulate combat between the two characters until one of the two characters reaches zero hit points.
+Your main program should be implemented in the file main.cpp. Your program should prompt the user for character
+details (name, role, hit points, etc.) for two characters. It should then simulate combat between the two characters
+until one of the two characters reaches zero hit points.
 
-I suggest implementing the input prompt after the character and combat logic. You can simply hard-code values for each character, then when you test the program you will not have to enter values each time you run it.
+I suggest implementing the input prompt after the character and combat logic. You can simply hard-code values for each
+character, then when you test the program you will not have to enter values each time you run it.
 
 ### Example of Program Execution
 
@@ -134,13 +145,15 @@ Uglar wins!
 
 ## Turn in and Grading
 
-Make sure that as you are working on the project, you make regular commits to git. This method will be how I know you worked on the project, and you did not copy/paste your submission from elsewhere. The last commit made before the due date will be graded, unless you specify otherwise.
+Make sure that as you are working on the project, you make regular commits to git. This method will be how I know you
+worked on the project, and you did not copy/paste your submission from elsewhere. The last commit made before the due
+date will be graded, unless you specify otherwise.
 
 This project is worth 10 points, distributed as follows:
 
-| Task                                                                                                                          | Points  |
-|:------------------------------------------------------------------------------------------------------------------------------|:--------|
-| Program compiles, runs, and produces correct output.                                                                          | 	4      |
-| The Character class is correctly defined in a .h and .cpp file as described above.                                            | 	1      |                                      
-| The Character class includes all member data and member functions described above.	                                           | 2       |                                        
-| Program conforms to coding standards (see CS 3100 Coding Standards in the Content/Handouts section of our class Pilot page).  | 	3      |
+| Task                                                                                                                         | Points |
+|:-----------------------------------------------------------------------------------------------------------------------------|:-------|
+| Program compiles, runs, and produces correct output.                                                                         | 	4     |
+| The Character class is correctly defined in a .h and .cpp file as described above.                                           | 	1     |                                      
+| The Character class includes all member data and member functions described above.	                                          | 2      |                                        
+| Program conforms to coding standards (see CS 3100 Coding Standards in the Content/Handouts section of our class Pilot page). | 	3     |
